@@ -1,0 +1,17 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://mongoadmin:secretpass@localhost:27017/service_b_db?authSource=admin
+  cloud:
+    stream:
+      bindings:
+        input:
+          destination: vote-topic
+        output:
+          destination: processed-topic
+      kafka:
+        binder:
+          brokers: localhost:9094
+server:
+  port: 8082
+

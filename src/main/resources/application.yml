@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: ScaleVote
+
+server:
+  port: 9090

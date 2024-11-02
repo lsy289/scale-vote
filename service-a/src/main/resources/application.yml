@@ -1,0 +1,15 @@
+spring:
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/service_a_db  # R2DBC URL 형식
+    username: postgres
+    password: postgres
+  cloud:
+    stream:
+      bindings:
+        output:
+          destination: vote-topic
+      kafka:
+        binder:
+          brokers: localhost:9094
+server:
+  port: 8081

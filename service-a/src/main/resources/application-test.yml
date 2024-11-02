@@ -1,0 +1,24 @@
+spring:
+  kafka:
+    ssl:
+      key-store-location: ""
+      trust-store-location: ""
+      key-store-password: ""
+      trust-store-password: ""
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/service_a_db  # R2DBC URL 형식
+    username: postgres
+    password: postgres
+  cloud:
+    stream:
+      bindings:
+        output:
+          destination: vote-topic
+      kafka:
+        binder:
+          brokers: localhost:9094
+          configuration:
+            security.protocol: PLAINTEXT  # SSL 대신 PLAINTEXT 프로토콜로 설정
+
+server:
+  port: 8081
